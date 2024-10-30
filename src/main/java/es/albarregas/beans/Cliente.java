@@ -6,6 +6,7 @@
 package es.albarregas.beans;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -66,5 +67,9 @@ public class Cliente implements Serializable {
         this.identificacion = identificacion;
     }
     
+    public String getFechaFormateada() {
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        return formato.format(this.getFecha());
+    }
 
 }

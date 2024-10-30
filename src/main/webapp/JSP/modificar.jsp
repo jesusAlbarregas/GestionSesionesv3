@@ -1,5 +1,3 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="es.albarregas.beans.Cliente"%>
 <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
 <!DOCTYPE html>
 <html>
@@ -28,12 +26,8 @@
                         </tr>
                         <tr>
                             <td><label for="fc">Fecha:</label></td>
-                            <%
-                                Cliente cliente = (Cliente)request.getSession().getAttribute("cliente");
-                                SimpleDateFormat formatoDeFecha = new SimpleDateFormat("yyyy-MM-dd");
-                                String fecha = formatoDeFecha.format(cliente.getFecha());
-                            %>
-                            <td><input type="date" name="fecha" id="fc" value="<%=fecha%>"></td>
+                            
+                            <td><input type="date" name="fecha" id="fc" value="${sessionScope.cliente.fechaFormateada}"></td>
                         </tr> 
 
                         <tr>
